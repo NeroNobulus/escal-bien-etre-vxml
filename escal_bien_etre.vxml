@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+  <form>
+    <block>
+      <prompt>
+        Bienvenue à l'Institut Escale Bien-Être, situé rue des Sources à Saint-Louis, Pontpoint.
+        Nous sommes ouverts du mardi au samedi, de 9 heures à 18 heures.
+        Pour prendre un rendez-vous, appuyez sur 1.
+        Pour modifier ou annuler un rendez-vous, appuyez sur 2.
+        Pour accéder à notre boutique de cartes cadeaux, appuyez sur 3.
+        Pour laisser un message, appuyez sur 4.
+      </prompt>
+    </block>
+  </form>
+</vxml>
