@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vxml version="2.1" xml:lang="fr-FR">
+  <!-- Message d'accueil -->
   <form>
     <block>
       <prompt>
@@ -10,6 +11,16 @@
         Pour accéder à notre boutique de cartes cadeaux, appuyez sur 3.
         Pour laisser un message, appuyez sur 4.
       </prompt>
+    </block>
+  </form>
+
+  <!-- Option 1 : Prendre un rendez-vous -->
+  <form id="option1">
+    <block>
+      <prompt>Un SMS pour prendre rendez-vous vous sera envoyé.</prompt>
+      <submit next="https://hooks.zapier.com/hooks/catch/21005912/28ojqt7/" method="post">
+        <var name="caller" expr="'${caller}'"/>
+      </submit>
     </block>
   </form>
 </vxml>
