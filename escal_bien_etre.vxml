@@ -19,7 +19,7 @@
   <!-- Option 1 : Prendre un rendez-vous -->
   <form id="option1">
     <block>
-      <prompt>Un SMS pour prendre rendez-vous vous sera envoyé.</prompt>
+      <prompt>Merci d'avoir choisi notre institut. Un SMS pour prendre rendez-vous vous sera envoyé immédiatement.</prompt>
       <submit next="https://hooks.zapier.com/hooks/catch/21005912/28ojqt7/" method="post">
         <var name="caller" expr="'${caller}'"/>
       </submit>
@@ -29,7 +29,7 @@
   <!-- Option 2 : Modifier ou annuler un rendez-vous -->
   <form id="option2">
     <block>
-      <prompt>Un SMS pour modifier ou annuler votre rendez-vous vous sera envoyé.</prompt>
+      <prompt>Vous avez choisi de modifier ou d'annuler un rendez-vous. Un SMS vous sera envoyé dans quelques instants.</prompt>
       <submit next="https://hooks.zapier.com/hooks/catch/XXXXXXXX/" method="post">
         <var name="caller" expr="'${caller}'"/>
       </submit>
@@ -39,7 +39,7 @@
   <!-- Option 3 : Accéder à la boutique de cartes cadeaux -->
   <form id="option3">
     <block>
-      <prompt>Un SMS avec un lien vers notre boutique de cartes cadeaux vous sera envoyé.</prompt>
+      <prompt>Merci de visiter notre boutique en ligne. Un SMS contenant le lien vers la boutique vous sera envoyé.</prompt>
       <submit next="https://hooks.zapier.com/hooks/catch/YYYYYYYY/" method="post">
         <var name="caller" expr="'${caller}'"/>
       </submit>
@@ -49,8 +49,9 @@
   <!-- Option 4 : Laisser un message vocal -->
   <form id="option4">
     <block>
-      <prompt>Veuillez laisser votre message après le bip sonore. Merci de votre appel.</prompt>
+      <prompt>Vous pouvez laisser votre message après le bip sonore. Merci de votre appel.</prompt>
       <record name="message" beep="true" maxtime="60s" finalsilence="3s" type="audio/wav"/>
     </block>
   </form>
 </vxml>
+
