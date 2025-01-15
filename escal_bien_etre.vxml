@@ -14,6 +14,12 @@
     <choice next="#option2">2</choice>
     <choice next="#option3">3</choice>
     <choice next="#option4">4</choice>
+    <noinput>
+      Je n'ai pas entendu votre choix. Veuillez appuyer sur une touche entre 1 et 4.
+    </noinput>
+    <nomatch>
+      Ce choix n'est pas valide. Veuillez appuyer sur une touche entre 1 et 4.
+    </nomatch>
   </menu>
 
   <!-- Option 1 : Prendre un rendez-vous -->
@@ -29,7 +35,7 @@
   <!-- Option 2 : Modifier ou annuler un rendez-vous -->
   <form id="option2">
     <block>
-      <prompt>Vous avez choisi de modifier ou d'annuler un rendez-vous. Un SMS vous sera envoyé dans quelques instants.</prompt>
+      <prompt>Vous avez choisi de modifier ou d'annuler un rendez-vous. Un SMS contenant le lien de modification vous sera envoyé.</prompt>
       <submit next="https://hooks.zapier.com/hooks/catch/XXXXXXXX/" method="post">
         <var name="caller" expr="'${caller}'"/>
       </submit>
@@ -39,7 +45,7 @@
   <!-- Option 3 : Accéder à la boutique de cartes cadeaux -->
   <form id="option3">
     <block>
-      <prompt>Merci de visiter notre boutique en ligne. Un SMS contenant le lien vers la boutique vous sera envoyé.</prompt>
+      <prompt>Merci de visiter notre boutique en ligne. Un SMS avec le lien vers la boutique vous sera envoyé dans quelques instants.</prompt>
       <submit next="https://hooks.zapier.com/hooks/catch/YYYYYYYY/" method="post">
         <var name="caller" expr="'${caller}'"/>
       </submit>
@@ -49,9 +55,10 @@
   <!-- Option 4 : Laisser un message vocal -->
   <form id="option4">
     <block>
-      <prompt>Vous pouvez laisser votre message après le bip sonore. Merci de votre appel.</prompt>
+      <prompt>Vous pouvez laisser votre message après le bip sonore. Merci pour votre appel.</prompt>
       <record name="message" beep="true" maxtime="60s" finalsilence="3s" type="audio/wav"/>
     </block>
   </form>
 </vxml>
+
 
