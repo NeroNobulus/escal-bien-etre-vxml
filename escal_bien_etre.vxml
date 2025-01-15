@@ -10,10 +10,10 @@
       Pour accéder à notre boutique de cartes cadeaux, appuyez sur 3.
       Pour laisser un message, appuyez sur 4.
     </prompt>
-    <choice next="#option1">1</choice>
-    <choice next="#option2">2</choice>
-    <choice next="#option3">3</choice>
-    <choice next="#option4">4</choice>
+    <choice dtmf="1" next="#option1">1</choice>
+    <choice dtmf="2" next="#option2">2</choice>
+    <choice dtmf="3" next="#option3">3</choice>
+    <choice dtmf="4" next="#option4">4</choice>
     <noinput>
       Je n'ai pas entendu votre choix. Veuillez appuyer sur une touche entre 1 et 4.
     </noinput>
@@ -26,9 +26,7 @@
   <form id="option1">
     <block>
       <prompt>Merci d'avoir choisi notre institut. Un SMS pour prendre rendez-vous vous sera envoyé immédiatement.</prompt>
-      <submit next="https://hooks.zapier.com/hooks/catch/21005912/28ojqt7/" method="post">
-        <var name="caller" expr="'${caller}'"/>
-      </submit>
+      <submit next="https://hooks.zapier.com/hooks/catch/21005912/28ojqt7/" method="post"/>
     </block>
   </form>
 
@@ -36,9 +34,7 @@
   <form id="option2">
     <block>
       <prompt>Vous avez choisi de modifier ou d'annuler un rendez-vous. Un SMS contenant le lien de modification vous sera envoyé.</prompt>
-      <submit next="https://hooks.zapier.com/hooks/catch/XXXXXXXX/" method="post">
-        <var name="caller" expr="'${caller}'"/>
-      </submit>
+      <submit next="https://hooks.zapier.com/hooks/catch/XXXXXXXX/" method="post"/>
     </block>
   </form>
 
@@ -46,9 +42,7 @@
   <form id="option3">
     <block>
       <prompt>Merci de visiter notre boutique en ligne. Un SMS avec le lien vers la boutique vous sera envoyé dans quelques instants.</prompt>
-      <submit next="https://hooks.zapier.com/hooks/catch/YYYYYYYY/" method="post">
-        <var name="caller" expr="'${caller}'"/>
-      </submit>
+      <submit next="https://hooks.zapier.com/hooks/catch/YYYYYYYY/" method="post"/>
     </block>
   </form>
 
