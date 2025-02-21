@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vxml version="2.1" xml:lang="fr-FR">
+  <!-- Déclaration de la variable pour le numéro de l'appelant -->
+  <var name="callerNumber" expr="session.connection.remoteID"/>
+
   <!-- Menu principal -->
   <menu id="main">
     <prompt>
@@ -28,9 +31,10 @@
       <prompt>
         Merci d'avoir choisi notre institut. Un SMS pour prendre rendez-vous vous sera envoyé immédiatement.
       </prompt>
-      <submit next="https://hook.eu2.make.com/wqso93ivfw1tst4bu7wbgvxdrm9v0hpk" method="post">
+      <submit next="https://hook.eu2.make.com/5r5aryym9cdlvjqiejpextmbkhnfja05" method="post">
         <param name="action" value="prendre-rendez-vous"/>
         <param name="sender" value="Nobulus"/>
+        <param name="phoneNumber" expr="callerNumber"/>
       </submit>
     </block>
   </form>
@@ -41,9 +45,10 @@
       <prompt>
         Vous avez choisi de modifier ou d'annuler un rendez-vous. Un SMS contenant le lien de modification vous sera envoyé.
       </prompt>
-      <submit next="https://hook.eu2.make.com/wqso93ivfw1tst4bu7wbgvxdrm9v0hpk" method="post">
+      <submit next="https://hook.eu2.make.com/5r5aryym9cdlvjqiejpextmbkhnfja05" method="post">
         <param name="action" value="modifier-rendez-vous"/>
         <param name="sender" value="Nobulus"/>
+        <param name="phoneNumber" expr="callerNumber"/>
       </submit>
     </block>
   </form>
@@ -54,9 +59,10 @@
       <prompt>
         Merci de visiter notre boutique en ligne. Un SMS avec le lien vers la boutique vous sera envoyé dans quelques instants.
       </prompt>
-      <submit next="https://hook.eu2.make.com/wqso93ivfw1tst4bu7wbgvxdrm9v0hpk" method="post">
+      <submit next="https://hook.eu2.make.com/5r5aryym9cdlvjqiejpextmbkhnfja05" method="post">
         <param name="action" value="boutique-cartes-cadeaux"/>
         <param name="sender" value="Nobulus"/>
+        <param name="phoneNumber" expr="callerNumber"/>
       </submit>
     </block>
   </form>
@@ -69,10 +75,11 @@
       </prompt>
       <record name="message" beep="true" maxtime="60s" finalsilence="3s" type="audio/wav">
         <filled>
-          <submit next="https://hook.eu2.make.com/wqso93ivfw1tst4bu7wbgvxdrm9v0hpk" method="post">
+          <submit next="https://hook.eu2.make.com/5r5aryym9cdlvjqiejpextmbkhnfja05" method="post">
             <param name="action" value="laisser-message"/>
             <param name="audio-file" expr="'${message}'"/>
             <param name="sender" value="Nobulus"/>
+            <param name="phoneNumber" expr="callerNumber"/>
           </submit>
         </filled>
       </record>
@@ -80,5 +87,7 @@
   </form>
 </vxml>
 
+
+    
 
 
